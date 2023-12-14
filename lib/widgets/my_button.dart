@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
   final String title;
-  VoidCallback onPressed;
+  final VoidCallback onPressed;
   final Color color;
 
-  MyButton({
+  const MyButton({
     super.key,
     required this.title,
     required this.onPressed,
@@ -25,6 +25,30 @@ class MyButton extends StatelessWidget {
           title,
           style: const TextStyle(color: Colors.white),
         )),
+      ),
+    );
+  }
+}
+
+class SettingsButton extends StatelessWidget {
+  final Color color;
+  final String text;
+  final int? value;
+  const SettingsButton({
+    super.key,
+    required this.color,
+    required this.text,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      onPressed: () {},
+      color: color,
+      child: Text(
+        text,
+        style: const TextStyle(color: Colors.white),
       ),
     );
   }
